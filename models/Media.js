@@ -2,10 +2,8 @@ module.exports = function(sequelize, DataTypes) {
   var Media = sequelize.define('media', {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
-    playthrough: {
-    	type: BOOLEAN,
-    	defaultValue: false
-    }
+    url: DataTypes.STRING,
+    playthrough: DataTypes.BOOLEAN
   });
-  return Task
+  return Media
 }
