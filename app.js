@@ -1,10 +1,11 @@
 var Sequelize = require('sequelize');
-
+Sequelize.import('./bee.js');
 var connection = new Sequelize('demodb', 'cestmoi', 'smartypass', {
 	dialect: 'postgres'
 });
 
-
+var Bee = require("./Bee");
+console.log("BEE IS", Bee);
 // var Book = connection.define('book', {
 // 	title: Sequelize.STRING
 // });
@@ -26,6 +27,12 @@ connection.sync().then(function() {
 	});
 });
 
+connection.sync().then(function() {
+	Bee.create({
+		serial: '1645A',
+		description: 'Buzzzzz'
+	});
+});
 // connection
 // 	.sync({
 // 		force: true,
